@@ -1,7 +1,7 @@
-![defaultbackend.k8s.lib.unb.ca screenshot](https://github.com/unb-libraries/defaultbackend.k8s.lib.unb.ca/raw/prod/.dockworker/screenshot.png "defaultbackend.k8s.lib.unb.ca screenshot")
+![defaultbackend.k8s.lib.unb.ca screenshot](https://github.com/unb-libraries/defaultbackend.k8s.lib.unb.ca/raw/ingress-nginx/.dockworker/screenshot.png "defaultbackend.k8s.lib.unb.ca screenshot")
 # [defaultbackend.k8s.lib.unb.ca](https://defaultbackend.k8s.lib.unb.ca/) : Lean Instance Repository
-[![Build Status](https://github.com/unb-libraries/defaultbackend.k8s.lib.unb.ca/actions/workflows/test-suite.yaml/badge.svg?branch=prod)](https://github.com/unb-libraries/defaultbackend.k8s.lib.unb.ca/actions/workflows/test-suite.yaml)
-[![GitHub license](https://img.shields.io/github/license/unb-libraries/defaultbackend.k8s.lib.unb.ca)](https://github.com/unb-libraries/defaultbackend.k8s.lib.unb.ca/blob/prod/LICENSE)
+[![Build Status](https://github.com/unb-libraries/defaultbackend.k8s.lib.unb.ca/actions/workflows/test-suite.yaml/badge.svg?branch=ingress-nginx)](https://github.com/unb-libraries/defaultbackend.k8s.lib.unb.ca/actions/workflows/test-suite.yaml)
+[![GitHub license](https://img.shields.io/github/license/unb-libraries/defaultbackend.k8s.lib.unb.ca)](https://github.com/unb-libraries/defaultbackend.k8s.lib.unb.ca/blob/ingress-nginx/LICENSE)
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/defaultbackend.k8s.lib.unb.ca?label=lean%20repo%20size)
 
 This repository contains the assets used to test, build, and deploy the defaultbackend.k8s.lib.unb.ca application.
