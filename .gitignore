@@ -2,4 +2,4 @@
 vendor
 composer.lock
 tests/features/bootstrap
-scripts/local
+build/scripts/local

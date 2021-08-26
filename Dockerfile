@@ -1,9 +1,8 @@
 FROM zhiminwen/custom-error-page:latest
 
 RUN rm -rf /www/*
-
-COPY data/pages/ /www/
-COPY ./scripts /scripts
+COPY build/data/pages/ /www/
+COPY build/scripts /scripts
 
 EXPOSE 8080
 ENTRYPOINT ["/scripts/run.sh"]
