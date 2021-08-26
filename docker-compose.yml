@@ -1,0 +1,9 @@
+services:
+  defaultbackend.k8s.lib.unb.ca:
+    build:
+      context: .
+    container_name: defaultbackend.k8s.lib.unb.ca
+    env_file:
+      - ./env/nginx.env
+    ports:
+      - "3510:8080"

@@ -1,0 +1,21 @@
+dockworker:
+  version: '4'
+  application:
+    name: defaultbackend.k8s.lib.unb.ca
+    finish_marker: '99_zz_notify_user_URI'
+    project_prefix: IN
+    upstream_images:
+      - zhiminwen/custom-error-page:latest
+    uuid: 3510
+  deployment:
+    environments:
+      - ingress-nginx
+  github:
+    repo: defaultbackend.k8s.lib.unb.ca
+    owner: unb-libraries
+  image:
+    push_branches:
+      - ingress-nginx
+    name: ghcr.io/unb-libraries/defaultbackend.k8s.lib.unb.ca
+    date_tag_image: true
+    repository: ghcr
