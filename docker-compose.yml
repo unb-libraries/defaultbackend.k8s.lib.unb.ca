@@ -7,3 +7,4 @@ services:
       - ./env/nginx.env
     ports:
       - "3510:8080"
+    restart: unless-stopped
