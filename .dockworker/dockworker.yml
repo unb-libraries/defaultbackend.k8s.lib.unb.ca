@@ -10,6 +10,9 @@ dockworker:
   deployment:
     environments:
       - ingress-nginx
+    workflow:
+      source: dockworker
+      type: deployment-workflow
   github:
     repo: defaultbackend.k8s.lib.unb.ca
     owner: unb-libraries
