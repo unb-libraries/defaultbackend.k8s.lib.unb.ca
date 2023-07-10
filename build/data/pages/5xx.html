@@ -182,7 +182,7 @@
       </p>
     </div>
     <div class="buttons-container">
-      <a class="border border-white btn btn-danger rounded-lg" href="mailto:libweb@unb.ca?subject=Server%20Issue%20Report" target="_blank">Report a problem</a>
+      <a id="report-problem-link" class="border border-white btn btn-danger rounded-lg" target="_blank">Report a problem</a>
     </div>
   </div>
   <div class="content-container content-container-img float-left d-none d-lg-block">
@@ -237,6 +237,8 @@
          easing : 'easeOutBounce'
        });
      }
+      reportProblemLink = document.getElementById('report-problem-link');
+      reportProblemLink.setAttribute('href', 'mailto:libweb@unb.ca?subject=Server%20Issue%20Report - ' + window.location.host);
     };
 
     ErrorPage.prototype.createTimeRangeTag = function(start, end) {
