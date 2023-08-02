@@ -10,6 +10,8 @@ spec:
   selector:
     matchLabels:
       app: defaultbackend-k8s-lib-unb-ca
+  nodeSelector:
+    deploy_prod: 'true'
   template:
     metadata:
       labels:
