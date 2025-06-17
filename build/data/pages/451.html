@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Range Blocked</title>
+</head>
+<body>
+<div class="context primary-text-color">
+  <h1>Access Denied</h1>
+  <p>
+    Access to this resource has been denied, generally due to repeated abusive or excessive traffic originating from your IP range.
+  </p>
+  <p>
+    If you believe this is a mistake or require legitimate access, please contact us at <a href="mailto:libsystems@unb.ca">libsystems@unb.ca</a> with details so we can investigate. To help us resolve your issue, please include your public IP address in your email. You can find your IP address below:
+  </p>
+  <p>
+    <strong>Your IP address:</strong> <span id="user-ip">Loading...</span>
+  </p>
+  <p>
+    We apologize for any inconvenience this may cause and appreciate your understanding.
+  </p>
+  <script>
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('user-ip').textContent = data.ip;
+      })
+      .catch(() => {
+        document.getElementById('user-ip').textContent = 'Unable to retrieve IP address';
+      });
+  </script>
+</div>
+</body>
+</html>
