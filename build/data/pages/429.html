@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="60">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" media="screen" href="https://unb.ca/webcomps/_css/myfontswebfontskit.css">
+  <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <title>University of New Brunswick Libraries: Too Many Requests</title>
+  <style>
+    * {
+     -moz-box-sizing:border-box;
+     -webkit-box-sizing:border-box;
+     box-sizing:border-box;
+    }
+    html, body, div, span, p, img {
+     background:transparent;
+     border:0;
+     margin:0;
+     outline:0;
+     padding:0;
+     vertical-align:baseline;
+    }
+    html {
+     overflow-y:scroll;
+     overflow-x:hidden;
+     width:100%;
+     height:100%;
+     -webkit-text-size-adjust: 100%;
+     -ms-text-size-adjust: 100%;
+    }
+    body {
+     min-height:100%;
+     -webkit-font-smoothing:subpixel-antialiased;
+    }
+    img {
+     border:0;
+     height:auto;
+     max-width:100%;
+     vertical-align:middle;
+     -ms-interpolation-mode:bicubic;
+    }
+    .background-color {
+      background-color:rgb(57, 62, 68) !important
+    }
+    .clearfix {
+     clear:both;
+     zoom:1;
+    }
+    .clearfix:before,
+    .clearfix:after {
+      content:"\0020";
+      display:block;
+      height:0;
+      visibility:hidden;
+    }
+    .clearfix:after {
+      clear: both;
+    }
+    .plain.error-page-wrapper {
+      background-color:rgba(45, 45, 45, 1);
+      font-family:'ProximaNovaA-Regular', 'Century Gothic', AppleGothic, Arial, sans-serif;
+      padding:0 5%;
+      position:relative;
+    }
+    .plain.error-page-wrapper hr {
+      background-color: rgba(255,255,255,.2);
+      border:none;
+      height:1px;
+      margin:35px 0;
+      max-width:250px;
+      width:100%;
+    }
+    .plain.error-page-wrapper .buttons-container {
+      margin-top:2rem;
+      overflow:hidden;
+    }
+    .plain.error-page-wrapper .content-container {
+      left:-30px;
+      max-width:400px;
+      opacity:0;
+      position:relative;
+      -webkit-transition:all .5s ease-out, opacity .5s ease-out;
+      -moz-transition:all .5s ease-out, opacity .5s ease-out;
+      -ms-transition:all .5s ease-out, opacity .5s ease-out;
+      -o-transition:all .5s ease-out, opacity .5s ease-out;
+      transition:all .5s ease-out, opacity .5s ease-out;
+    }
+    .plain.error-page-wrapper .content-container-img {
+      margin-left:5.4rem;
+    }
+    .plain.error-page-wrapper .content-container.in {
+      left: 0;
+      opacity:1;
+    }
+    .plain.error-page-wrapper .content-container.in+.content-container-img {
+      margin-left:2rem;
+    }
+    .plain.error-page-wrapper .context {
+      color:#fff;
+      font-size:18px;
+      line-height:1.4rem;
+      transition:color .2s linear;
+    }
+    .plain.error-page-wrapper .context p {
+      margin:0;
+    }
+    .plain.error-page-wrapper .context p:nth-child(n+2) {
+      margin-top:12px;
+    }
+    .plain.error-page-wrapper .head-line {
+      color:rgba(255,255,255,.2);
+      font-size:48px;
+      letter-spacing:-1px;
+      line-height:60px;
+      margin-bottom:5px;
+      transition:color .2s linear;
+    }
+    .plain.error-page-wrapper .subheader {
+      color:#fff;
+      font-size:36px;
+      line-height:46px;
+      transition:color .2s linear;
+    }
+    .primary-text-color {
+      color:#fff !important;
+    }
+    .secondary-text-color {
+      color:rgba(255, 255, 255, 1) !important;
+    }
+
+    @media screen and (max-width: 485px) {
+      .plain.error-page-wrapper .header {
+        font-size:36px;
+       }
+      .plain.error-page-wrapper .subheader {
+        font-size:2.2rem;
+        line-height:38px;
+       }
+      .plain.error-page-wrapper hr {
+        width:185px;
+        margin:25px 0;
+       }
+      .plain.error-page-wrapper .context {
+        font-size:16px;
+        line-height:24px;
+       }
+      .plain.error-page-wrapper .buttons-container {
+        margin-top:35px;
+      }
+      .plain.error-page-wrapper .buttons-container a {
+        font-size:13px;
+        padding:8px 0 7px;
+        width:45%;
+        text-align:center;
+      }
+      .plain.error-page-wrapper .buttons-container a:first-child {
+        margin-right:10%;
+      }
+    }
+  </style>
+</head>
+
+<body class="plain error-page-wrapper background-color background-image">
+  <div class="content-container float-left">
+    <div class="head-line secondary-text-color">
+        Slow Down!
+    </div>
+    <div class="subheader primary-text-color ">
+        You're sending requests <br>
+        too quickly.
+    </div>
+    <hr>
+    <div class="clearfix"></div>
+
+    <div class="context primary-text-color">
+      <p>
+        Our servers have temporarily limited your access because too many requests were received from your connection in a short period of time.
+      </p>
+      <p>
+        Please wait a moment and try again. Normal access will resume shortly.
+      </p>
+    </div>
+    <div class="buttons-container">
+      <a id="report-problem-link" class="border border-white btn btn-danger rounded-lg" target="_blank">Report a problem</a>
+    </div>
+  </div>
+  <div class="content-container content-container-img float-left d-none d-lg-block">
+    <img src="//raw.githubusercontent.com/unb-libraries/defaultbackend.k8s.lib.unb.ca/ingress-nginx/build/data/pages/images/error_5xx.png"
+         alt="UNB Libraries will be back soon">
+  </div>
+
+  <script>
+    function ErrorPage(container, templateName) {
+      this.$container = $(container);
+      this.$contentContainer = this.$container.find('.content-container');
+      this.templateName = templateName;
+    }
+
+    ErrorPage.prototype.centerContent = function () {
+     var containerHeight = this.$container.outerHeight()
+       , contentContainerHeight = this.$contentContainer.outerHeight()
+       , top = (containerHeight - contentContainerHeight) / 2;
+
+     this.$contentContainer.css('top', top);
+    };
+
+    ErrorPage.prototype.initialize = function () {
+     var self = this;
+
+     this.centerContent();
+     this.$container.on('resize', function (e) {
+       e.preventDefault();
+       e.stopPropagation();
+       self.centerContent();
+     });
+
+     if (this.templateName == 'plain') {
+       window.setTimeout(function () {
+         self.$contentContainer.addClass('in');
+       }, 500);
+     }
+
+      var reportProblemLink = document.getElementById('report-problem-link');
+      var subject = 'Rate%20Limit%20Report - ' + window.location.host;
+      reportProblemLink.setAttribute('href', 'mailto:libweb@unb.ca?subject=' + subject);
+
+      fetch('https://api.ipify.org?format=json')
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+          subject = 'Rate%20Limit%20Report - ' + window.location.host + ' - ' + data.ip;
+          reportProblemLink.setAttribute('href', 'mailto:libweb@unb.ca?subject=' + subject);
+        })
+        .catch(function () {});
+    };
+
+    var ep = new ErrorPage('body', 'plain');
+    ep.initialize();
+
+    $(window).on('resize', function() {
+     $('body').trigger('resize')
+    });
+  </script>
+
+</body>
+</html>
