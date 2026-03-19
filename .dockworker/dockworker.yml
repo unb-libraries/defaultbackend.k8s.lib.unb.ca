@@ -1,5 +1,5 @@
 dockworker:
-  version: '5'
+  version: '6'
   application:
     name: defaultbackend.k8s.lib.unb.ca
     finish_marker: '99_zz_notify_user_URI'
@@ -12,7 +12,7 @@ dockworker:
       - ingress-nginx
     workflow:
       source: dockworker
-      type: deployment-workflow
+      type: build-push-deploy-notify
   github:
     repo: defaultbackend.k8s.lib.unb.ca
     owner: unb-libraries
