@@ -13,7 +13,6 @@ jobs:
       deploy-branches: '["ingress-nginx"]'
       image-name: 'ghcr.io/unb-libraries/defaultbackend.k8s.lib.unb.ca'
       k8s-deployment-name: 'defaultbackend-k8s-lib-unb-ca'
-      push-branches: '["ingress-nginx"]'
       platforms: 'linux/amd64'
     secrets:
       KUBE_CONFIG: ${{ secrets.KUBE_CONFIG_DATA }}
